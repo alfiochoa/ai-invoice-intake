@@ -85,7 +85,7 @@ def add_noise(lines: list[str], rng: random.Random) -> list[str]:
 
 
 def write_pdf(path: Path, lines: list[str], noisy: bool):
-    c = canvas.Canvas(str(path), pagesize=letter)
+    c = canvas.Canvas(str(path), pagesize=letter, invariant=1)
     y = 740
     for l in lines:
         c.setFont("Courier", 10)
