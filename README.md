@@ -41,11 +41,11 @@ Images and image-only PDFs are OCR'd with [RapidOCR](https://github.com/RapidAI/
 ## Run it
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements-dev.txt   # requirements.txt = lean runtime (what Streamlit Cloud installs)
 cp .env.example .env   # optional: LLM_API_KEY, LLM_BASE_URL, LLM_MODEL (any OpenAI-compatible API); without it rules are used
 python -m invoice_intake.synth                 # 32 synthetic invoices -> data/invoices (+ ground_truth.json)
 uvicorn invoice_intake.api:app                 # POST /invoices, GET /invoices, POST /invoices/{id}/review, GET /export.csv
-streamlit run invoice_intake/ui.py             # upload + review queue + CSV download
+streamlit run streamlit_app.py                 # upload + review queue + CSV download
 python -m invoice_intake.evaluate --mode rules llm   # accuracy report -> reports/
 pytest
 ```
@@ -85,3 +85,6 @@ Take-aways: the rules never emit a wrong value on this data (they return nothing
 ## Layout
 
 `invoice_intake/` schema · extract (LLM + rules) · validate · db (SQLite, CSV export) · pipeline · api (FastAPI) · ui (Streamlit) · synth · evaluate; `tests/`; `data/` sample synthetic invoices; `reports/` accuracy output.
+
+## Deploy on Streamlit Community Cloud
+Repo `alfiochoa/ai-invoice-intake` · branch `main` · main file `streamlit_app.py`. Optional secrets (see `.streamlit/secrets.toml.example`): `LLM_API_KEY`, `LLM_BASE_URL`, `LLM_MODEL`. The review queue self-seeds with 6 synthetic invoices on first run; without a key the rule-based extractor is used. The SQLite DB is ephemeral on Streamlit Cloud. OCR for images is optional (`requirements-ocr.txt`) and not installed there.

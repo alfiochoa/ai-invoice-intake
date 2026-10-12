@@ -1,0 +1,7 @@
+-r requirements.txt
+reportlab
+fastapi
+uvicorn
+httpx
+python-multipart
+pytest
