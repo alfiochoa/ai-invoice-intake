@@ -1,0 +1,18 @@
+From: Greenleaf Catering <billing@example.invalid>
+To: ap@sampleclient.invalid
+Subject: Invoice  from Greenleaf Catering
+
+Hello, please find our invoice below (SYNTHETIC).
+
+Date: 07/13/2025
+Payment due: 08/12/2025
+Items:
+- Laptop repair (6 x 21.99) 131.94
+- Courier delivery (7 x 21.02) 147.14
+- Monthly cleaning service (6 x 110.26) 661.56
+- Business cards (500) (1 x 132.43) 132.43
+Subtotal 1,073.07
+Sales tax 0.00
+Amount due 1,073.07
+
+Thanks!

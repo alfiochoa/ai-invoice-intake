@@ -1,0 +1,1168 @@
+[
+ {
+  "file": "inv_01_missing_number.txt",
+  "kind": "missing_number",
+  "expected_issues": [
+   "MISSING_FIELD"
+  ],
+  "expected_route": "review",
+  "truth": {
+   "vendor": "Greenleaf Catering",
+   "invoice_number": null,
+   "invoice_date": "2025-07-13",
+   "due_date": "2025-08-12",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Laptop repair",
+     "quantity": 6.0,
+     "unit_price": 21.99,
+     "amount": 131.94
+    },
+    {
+     "description": "Courier delivery",
+     "quantity": 7.0,
+     "unit_price": 21.02,
+     "amount": 147.14
+    },
+    {
+     "description": "Monthly cleaning service",
+     "quantity": 6.0,
+     "unit_price": 110.26,
+     "amount": 661.56
+    },
+    {
+     "description": "Business cards (500)",
+     "quantity": 1.0,
+     "unit_price": 132.43,
+     "amount": 132.43
+    }
+   ],
+   "subtotal": 1073.07,
+   "tax": 0.0,
+   "total": 1073.07
+  }
+ },
+ {
+  "file": "inv_02_clean.pdf",
+  "kind": "clean",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Greenleaf Catering",
+   "invoice_number": "GC-6820",
+   "invoice_date": "2025-07-09",
+   "due_date": "2025-08-08",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Laptop repair",
+     "quantity": 11.0,
+     "unit_price": 44.11,
+     "amount": 485.21
+    },
+    {
+     "description": "Network cable 10m",
+     "quantity": 5.0,
+     "unit_price": 177.4,
+     "amount": 887.0
+    },
+    {
+     "description": "Business cards (500)",
+     "quantity": 4.0,
+     "unit_price": 156.5,
+     "amount": 626.0
+    },
+    {
+     "description": "Toner cartridge",
+     "quantity": 7.0,
+     "unit_price": 52.92,
+     "amount": 370.44
+    },
+    {
+     "description": "Printer paper (case)",
+     "quantity": 11.0,
+     "unit_price": 150.8,
+     "amount": 1658.8
+    }
+   ],
+   "subtotal": 4027.45,
+   "tax": 201.37,
+   "total": 4228.82
+  }
+ },
+ {
+  "file": "inv_03_clean.pdf",
+  "kind": "clean",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Cedar & Pine Printing",
+   "invoice_number": "C&P-8573",
+   "invoice_date": "2025-03-25",
+   "due_date": null,
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Network cable 10m",
+     "quantity": 11.0,
+     "unit_price": 34.12,
+     "amount": 375.32
+    }
+   ],
+   "subtotal": 375.32,
+   "tax": 18.77,
+   "total": 394.09
+  }
+ },
+ {
+  "file": "inv_04_clean.pdf",
+  "kind": "clean",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Greenleaf Catering",
+   "invoice_number": "GC-8517",
+   "invoice_date": "2025-07-22",
+   "due_date": "2025-08-21",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Business cards (500)",
+     "quantity": 1.0,
+     "unit_price": 145.69,
+     "amount": 145.69
+    },
+    {
+     "description": "Whiteboard markers",
+     "quantity": 7.0,
+     "unit_price": 51.12,
+     "amount": 357.84
+    },
+    {
+     "description": "Laptop repair",
+     "quantity": 4.0,
+     "unit_price": 164.71,
+     "amount": 658.84
+    },
+    {
+     "description": "Printer paper (case)",
+     "quantity": 10.0,
+     "unit_price": 158.24,
+     "amount": 1582.4
+    },
+    {
+     "description": "Consulting hour",
+     "quantity": 6.0,
+     "unit_price": 41.42,
+     "amount": 248.52
+    }
+   ],
+   "subtotal": 2993.29,
+   "tax": 299.33,
+   "total": 3292.62
+  }
+ },
+ {
+  "file": "inv_05_missing_number.pdf",
+  "kind": "missing_number",
+  "expected_issues": [
+   "MISSING_FIELD"
+  ],
+  "expected_route": "review",
+  "truth": {
+   "vendor": "Brightline Cleaning Co",
+   "invoice_number": null,
+   "invoice_date": "2025-07-05",
+   "due_date": "2025-08-04",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Consulting hour",
+     "quantity": 9.0,
+     "unit_price": 50.24,
+     "amount": 452.16
+    },
+    {
+     "description": "Desk lamp",
+     "quantity": 10.0,
+     "unit_price": 79.4,
+     "amount": 794.0
+    }
+   ],
+   "subtotal": 1246.16,
+   "tax": 124.62,
+   "total": 1370.78
+  }
+ },
+ {
+  "file": "inv_06_clean.pdf",
+  "kind": "clean",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Harbor Freight Logistics",
+   "invoice_number": "HFL-2040",
+   "invoice_date": "2025-08-05",
+   "due_date": null,
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Printer paper (case)",
+     "quantity": 2.0,
+     "unit_price": 30.9,
+     "amount": 61.8
+    }
+   ],
+   "subtotal": 61.8,
+   "tax": 3.09,
+   "total": 64.89
+  }
+ },
+ {
+  "file": "inv_07_total_mismatch.txt",
+  "kind": "total_mismatch",
+  "expected_issues": [
+   "TOTAL_MISMATCH"
+  ],
+  "expected_route": "review",
+  "truth": {
+   "vendor": "Summit IT Services",
+   "invoice_number": "SIS-8433",
+   "invoice_date": "2025-03-22",
+   "due_date": "2025-04-21",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Desk lamp",
+     "quantity": 11.0,
+     "unit_price": 130.85,
+     "amount": 1439.35
+    },
+    {
+     "description": "Courier delivery",
+     "quantity": 11.0,
+     "unit_price": 159.72,
+     "amount": 1756.92
+    },
+    {
+     "description": "Consulting hour",
+     "quantity": 5.0,
+     "unit_price": 139.27,
+     "amount": 696.35
+    },
+    {
+     "description": "Printer paper (case)",
+     "quantity": 6.0,
+     "unit_price": 23.63,
+     "amount": 141.78
+    }
+   ],
+   "subtotal": 4034.4,
+   "tax": 403.44,
+   "total": 4442.84
+  }
+ },
+ {
+  "file": "inv_08_clean.pdf",
+  "kind": "clean",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Cedar & Pine Printing",
+   "invoice_number": "C&P-4923",
+   "invoice_date": "2025-06-07",
+   "due_date": "2025-07-07",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Monthly cleaning service",
+     "quantity": 3.0,
+     "unit_price": 69.81,
+     "amount": 209.43
+    },
+    {
+     "description": "Desk lamp",
+     "quantity": 3.0,
+     "unit_price": 98.93,
+     "amount": 296.79
+    },
+    {
+     "description": "Toner cartridge",
+     "quantity": 9.0,
+     "unit_price": 165.65,
+     "amount": 1490.85
+    },
+    {
+     "description": "Courier delivery",
+     "quantity": 10.0,
+     "unit_price": 61.05,
+     "amount": 610.5
+    },
+    {
+     "description": "Business cards (500)",
+     "quantity": 1.0,
+     "unit_price": 23.69,
+     "amount": 23.69
+    }
+   ],
+   "subtotal": 2631.26,
+   "tax": 210.5,
+   "total": 2841.76
+  }
+ },
+ {
+  "file": "inv_09_noisy.pdf",
+  "kind": "noisy",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Summit IT Services",
+   "invoice_number": "SIS-3060",
+   "invoice_date": "2025-09-30",
+   "due_date": "2025-10-30",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Toner cartridge",
+     "quantity": 12.0,
+     "unit_price": 89.53,
+     "amount": 1074.36
+    }
+   ],
+   "subtotal": 1074.36,
+   "tax": 0.0,
+   "total": 1074.36
+  }
+ },
+ {
+  "file": "inv_10_clean.pdf",
+  "kind": "clean",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Northwind Office Supply",
+   "invoice_number": "NOS-2604",
+   "invoice_date": "2025-08-15",
+   "due_date": "2025-09-14",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Consulting hour",
+     "quantity": 4.0,
+     "unit_price": 37.48,
+     "amount": 149.92
+    },
+    {
+     "description": "Laptop repair",
+     "quantity": 8.0,
+     "unit_price": 28.67,
+     "amount": 229.36
+    },
+    {
+     "description": "Toner cartridge",
+     "quantity": 3.0,
+     "unit_price": 53.02,
+     "amount": 159.06
+    },
+    {
+     "description": "Business cards (500)",
+     "quantity": 4.0,
+     "unit_price": 157.91,
+     "amount": 631.64
+    }
+   ],
+   "subtotal": 1169.98,
+   "tax": 0.0,
+   "total": 1169.98
+  }
+ },
+ {
+  "file": "inv_11_clean.pdf",
+  "kind": "clean",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Summit IT Services",
+   "invoice_number": "SIS-4502",
+   "invoice_date": "2025-09-04",
+   "due_date": null,
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Toner cartridge",
+     "quantity": 4.0,
+     "unit_price": 33.27,
+     "amount": 133.08
+    }
+   ],
+   "subtotal": 133.08,
+   "tax": 13.31,
+   "total": 146.39
+  }
+ },
+ {
+  "file": "inv_12_clean.txt",
+  "kind": "clean",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Brightline Cleaning Co",
+   "invoice_number": "BCC-1958",
+   "invoice_date": "2025-04-22",
+   "due_date": "2025-05-22",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Printer paper (case)",
+     "quantity": 5.0,
+     "unit_price": 78.45,
+     "amount": 392.25
+    },
+    {
+     "description": "Cloud backup plan",
+     "quantity": 12.0,
+     "unit_price": 179.19,
+     "amount": 2150.28
+    },
+    {
+     "description": "Courier delivery",
+     "quantity": 9.0,
+     "unit_price": 120.49,
+     "amount": 1084.41
+    },
+    {
+     "description": "Catering - team lunch",
+     "quantity": 8.0,
+     "unit_price": 31.24,
+     "amount": 249.92
+    }
+   ],
+   "subtotal": 3876.86,
+   "tax": 310.15,
+   "total": 4187.01
+  }
+ },
+ {
+  "file": "inv_13_duplicate.txt",
+  "kind": "duplicate",
+  "expected_issues": [
+   "DUPLICATE"
+  ],
+  "expected_route": "review",
+  "truth": {
+   "vendor": "Greenleaf Catering",
+   "invoice_number": "GC-6820",
+   "invoice_date": "2025-07-09",
+   "due_date": "2025-08-08",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Laptop repair",
+     "quantity": 11.0,
+     "unit_price": 44.11,
+     "amount": 485.21
+    },
+    {
+     "description": "Network cable 10m",
+     "quantity": 5.0,
+     "unit_price": 177.4,
+     "amount": 887.0
+    },
+    {
+     "description": "Business cards (500)",
+     "quantity": 4.0,
+     "unit_price": 156.5,
+     "amount": 626.0
+    },
+    {
+     "description": "Toner cartridge",
+     "quantity": 7.0,
+     "unit_price": 52.92,
+     "amount": 370.44
+    },
+    {
+     "description": "Printer paper (case)",
+     "quantity": 11.0,
+     "unit_price": 150.8,
+     "amount": 1658.8
+    }
+   ],
+   "subtotal": 4027.45,
+   "tax": 201.37,
+   "total": 4228.82
+  }
+ },
+ {
+  "file": "inv_14_clean.pdf",
+  "kind": "clean",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Northwind Office Supply",
+   "invoice_number": "NOS-9320",
+   "invoice_date": "2025-01-30",
+   "due_date": "2025-03-01",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Network cable 10m",
+     "quantity": 8.0,
+     "unit_price": 92.5,
+     "amount": 740.0
+    }
+   ],
+   "subtotal": 740.0,
+   "tax": 37.0,
+   "total": 777.0
+  }
+ },
+ {
+  "file": "inv_15_total_mismatch.pdf",
+  "kind": "total_mismatch",
+  "expected_issues": [
+   "TOTAL_MISMATCH"
+  ],
+  "expected_route": "review",
+  "truth": {
+   "vendor": "Northwind Office Supply",
+   "invoice_number": "NOS-4910",
+   "invoice_date": "2025-06-10",
+   "due_date": null,
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Toner cartridge",
+     "quantity": 10.0,
+     "unit_price": 47.33,
+     "amount": 473.3
+    },
+    {
+     "description": "Whiteboard markers",
+     "quantity": 10.0,
+     "unit_price": 10.99,
+     "amount": 109.9
+    },
+    {
+     "description": "Business cards (500)",
+     "quantity": 2.0,
+     "unit_price": 77.78,
+     "amount": 155.56
+    },
+    {
+     "description": "Cloud backup plan",
+     "quantity": 10.0,
+     "unit_price": 103.48,
+     "amount": 1034.8
+    },
+    {
+     "description": "Consulting hour",
+     "quantity": 6.0,
+     "unit_price": 168.51,
+     "amount": 1011.06
+    }
+   ],
+   "subtotal": 2784.62,
+   "tax": 139.23,
+   "total": 2916.6
+  }
+ },
+ {
+  "file": "inv_16_noisy.pdf",
+  "kind": "noisy",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Greenleaf Catering",
+   "invoice_number": "GC-6718",
+   "invoice_date": "2025-03-09",
+   "due_date": "2025-04-08",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Catering - team lunch",
+     "quantity": 1.0,
+     "unit_price": 84.66,
+     "amount": 84.66
+    },
+    {
+     "description": "Laptop repair",
+     "quantity": 10.0,
+     "unit_price": 179.31,
+     "amount": 1793.1
+    },
+    {
+     "description": "Toner cartridge",
+     "quantity": 2.0,
+     "unit_price": 98.62,
+     "amount": 197.24
+    }
+   ],
+   "subtotal": 2075.0,
+   "tax": 166.0,
+   "total": 2241.0
+  }
+ },
+ {
+  "file": "inv_17_unknown_vendor.pdf",
+  "kind": "unknown_vendor",
+  "expected_issues": [
+   "VENDOR_NOT_WHITELISTED"
+  ],
+  "expected_route": "review",
+  "truth": {
+   "vendor": "Zenith Offshore Ltd",
+   "invoice_number": "ZOL-3532",
+   "invoice_date": "2025-11-14",
+   "due_date": "2025-12-14",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Whiteboard markers",
+     "quantity": 11.0,
+     "unit_price": 22.09,
+     "amount": 242.99
+    },
+    {
+     "description": "Business cards (500)",
+     "quantity": 9.0,
+     "unit_price": 159.61,
+     "amount": 1436.49
+    }
+   ],
+   "subtotal": 1679.48,
+   "tax": 167.95,
+   "total": 1847.43
+  }
+ },
+ {
+  "file": "inv_18_clean.pdf",
+  "kind": "clean",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Brightline Cleaning Co",
+   "invoice_number": "BCC-8541",
+   "invoice_date": "2025-04-13",
+   "due_date": null,
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Printer paper (case)",
+     "quantity": 11.0,
+     "unit_price": 156.08,
+     "amount": 1716.88
+    },
+    {
+     "description": "Monthly cleaning service",
+     "quantity": 4.0,
+     "unit_price": 50.96,
+     "amount": 203.84
+    },
+    {
+     "description": "Laptop repair",
+     "quantity": 12.0,
+     "unit_price": 23.02,
+     "amount": 276.24
+    },
+    {
+     "description": "Cloud backup plan",
+     "quantity": 1.0,
+     "unit_price": 155.11,
+     "amount": 155.11
+    }
+   ],
+   "subtotal": 2352.07,
+   "tax": 117.6,
+   "total": 2469.67
+  }
+ },
+ {
+  "file": "inv_19_clean.pdf",
+  "kind": "clean",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Brightline Cleaning Co",
+   "invoice_number": "BCC-9346",
+   "invoice_date": "2025-06-29",
+   "due_date": null,
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Printer paper (case)",
+     "quantity": 4.0,
+     "unit_price": 74.13,
+     "amount": 296.52
+    },
+    {
+     "description": "Whiteboard markers",
+     "quantity": 5.0,
+     "unit_price": 156.13,
+     "amount": 780.65
+    }
+   ],
+   "subtotal": 1077.17,
+   "tax": 86.17,
+   "total": 1163.34
+  }
+ },
+ {
+  "file": "inv_20_noisy.pdf",
+  "kind": "noisy",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Summit IT Services",
+   "invoice_number": "SIS-9379",
+   "invoice_date": "2025-08-12",
+   "due_date": "2025-09-11",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Printer paper (case)",
+     "quantity": 3.0,
+     "unit_price": 106.18,
+     "amount": 318.54
+    },
+    {
+     "description": "Toner cartridge",
+     "quantity": 5.0,
+     "unit_price": 10.73,
+     "amount": 53.65
+    },
+    {
+     "description": "Courier delivery",
+     "quantity": 10.0,
+     "unit_price": 80.48,
+     "amount": 804.8
+    }
+   ],
+   "subtotal": 1176.99,
+   "tax": 94.16,
+   "total": 1271.15
+  }
+ },
+ {
+  "file": "inv_21_clean.txt",
+  "kind": "clean",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Brightline Cleaning Co",
+   "invoice_number": "BCC-7790",
+   "invoice_date": "2025-08-22",
+   "due_date": "2025-09-21",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Monthly cleaning service",
+     "quantity": 1.0,
+     "unit_price": 47.09,
+     "amount": 47.09
+    },
+    {
+     "description": "Printer paper (case)",
+     "quantity": 8.0,
+     "unit_price": 111.58,
+     "amount": 892.64
+    }
+   ],
+   "subtotal": 939.73,
+   "tax": 0.0,
+   "total": 939.73
+  }
+ },
+ {
+  "file": "inv_22_clean.pdf",
+  "kind": "clean",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Brightline Cleaning Co",
+   "invoice_number": "BCC-5082",
+   "invoice_date": "2025-10-13",
+   "due_date": "2025-11-12",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Catering - team lunch",
+     "quantity": 11.0,
+     "unit_price": 125.02,
+     "amount": 1375.22
+    },
+    {
+     "description": "Cloud backup plan",
+     "quantity": 2.0,
+     "unit_price": 141.0,
+     "amount": 282.0
+    },
+    {
+     "description": "Business cards (500)",
+     "quantity": 4.0,
+     "unit_price": 34.96,
+     "amount": 139.84
+    },
+    {
+     "description": "Monthly cleaning service",
+     "quantity": 12.0,
+     "unit_price": 95.16,
+     "amount": 1141.92
+    }
+   ],
+   "subtotal": 2938.98,
+   "tax": 0.0,
+   "total": 2938.98
+  }
+ },
+ {
+  "file": "inv_23_noisy.pdf",
+  "kind": "noisy",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Brightline Cleaning Co",
+   "invoice_number": "BCC-8373",
+   "invoice_date": "2025-09-01",
+   "due_date": null,
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Whiteboard markers",
+     "quantity": 8.0,
+     "unit_price": 111.83,
+     "amount": 894.64
+    },
+    {
+     "description": "Desk lamp",
+     "quantity": 12.0,
+     "unit_price": 161.0,
+     "amount": 1932.0
+    },
+    {
+     "description": "Consulting hour",
+     "quantity": 7.0,
+     "unit_price": 150.18,
+     "amount": 1051.26
+    },
+    {
+     "description": "Laptop repair",
+     "quantity": 9.0,
+     "unit_price": 82.48,
+     "amount": 742.32
+    }
+   ],
+   "subtotal": 4620.22,
+   "tax": 231.01,
+   "total": 4851.23
+  }
+ },
+ {
+  "file": "inv_24_clean.pdf",
+  "kind": "clean",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Harbor Freight Logistics",
+   "invoice_number": "HFL-8657",
+   "invoice_date": "2025-03-26",
+   "due_date": "2025-04-25",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Courier delivery",
+     "quantity": 8.0,
+     "unit_price": 9.11,
+     "amount": 72.88
+    },
+    {
+     "description": "Cloud backup plan",
+     "quantity": 6.0,
+     "unit_price": 121.72,
+     "amount": 730.32
+    }
+   ],
+   "subtotal": 803.2,
+   "tax": 80.32,
+   "total": 883.52
+  }
+ },
+ {
+  "file": "inv_25_duplicate.pdf",
+  "kind": "duplicate",
+  "expected_issues": [
+   "DUPLICATE"
+  ],
+  "expected_route": "review",
+  "truth": {
+   "vendor": "Northwind Office Supply",
+   "invoice_number": "NOS-9320",
+   "invoice_date": "2025-01-30",
+   "due_date": "2025-03-01",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Network cable 10m",
+     "quantity": 8.0,
+     "unit_price": 92.5,
+     "amount": 740.0
+    }
+   ],
+   "subtotal": 740.0,
+   "tax": 37.0,
+   "total": 777.0
+  }
+ },
+ {
+  "file": "inv_26_clean.pdf",
+  "kind": "clean",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Summit IT Services",
+   "invoice_number": "SIS-2341",
+   "invoice_date": "2025-05-10",
+   "due_date": null,
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Whiteboard markers",
+     "quantity": 8.0,
+     "unit_price": 35.98,
+     "amount": 287.84
+    },
+    {
+     "description": "Printer paper (case)",
+     "quantity": 5.0,
+     "unit_price": 70.72,
+     "amount": 353.6
+    },
+    {
+     "description": "Toner cartridge",
+     "quantity": 4.0,
+     "unit_price": 84.03,
+     "amount": 336.12
+    },
+    {
+     "description": "Cloud backup plan",
+     "quantity": 6.0,
+     "unit_price": 137.98,
+     "amount": 827.88
+    },
+    {
+     "description": "Monthly cleaning service",
+     "quantity": 7.0,
+     "unit_price": 52.97,
+     "amount": 370.79
+    }
+   ],
+   "subtotal": 2176.23,
+   "tax": 217.62,
+   "total": 2393.85
+  }
+ },
+ {
+  "file": "inv_27_missing_date.pdf",
+  "kind": "missing_date",
+  "expected_issues": [
+   "MISSING_FIELD"
+  ],
+  "expected_route": "review",
+  "truth": {
+   "vendor": "Greenleaf Catering",
+   "invoice_number": "GC-5198",
+   "invoice_date": null,
+   "due_date": null,
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Printer paper (case)",
+     "quantity": 1.0,
+     "unit_price": 171.13,
+     "amount": 171.13
+    },
+    {
+     "description": "Laptop repair",
+     "quantity": 4.0,
+     "unit_price": 151.7,
+     "amount": 606.8
+    },
+    {
+     "description": "Business cards (500)",
+     "quantity": 10.0,
+     "unit_price": 30.82,
+     "amount": 308.2
+    },
+    {
+     "description": "Toner cartridge",
+     "quantity": 3.0,
+     "unit_price": 87.35,
+     "amount": 262.05
+    },
+    {
+     "description": "Consulting hour",
+     "quantity": 2.0,
+     "unit_price": 103.26,
+     "amount": 206.52
+    }
+   ],
+   "subtotal": 1554.7,
+   "tax": 77.74,
+   "total": 1632.44
+  }
+ },
+ {
+  "file": "inv_28_unknown_vendor.pdf",
+  "kind": "unknown_vendor",
+  "expected_issues": [
+   "VENDOR_NOT_WHITELISTED"
+  ],
+  "expected_route": "review",
+  "truth": {
+   "vendor": "Quickbuck Trading LLC",
+   "invoice_number": "QTL-4249",
+   "invoice_date": "2025-07-23",
+   "due_date": "2025-08-22",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Courier delivery",
+     "quantity": 10.0,
+     "unit_price": 8.52,
+     "amount": 85.2
+    },
+    {
+     "description": "Toner cartridge",
+     "quantity": 5.0,
+     "unit_price": 105.34,
+     "amount": 526.7
+    }
+   ],
+   "subtotal": 611.9,
+   "tax": 61.19,
+   "total": 673.09
+  }
+ },
+ {
+  "file": "inv_29_clean.pdf",
+  "kind": "clean",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Greenleaf Catering",
+   "invoice_number": "GC-9728",
+   "invoice_date": "2025-06-27",
+   "due_date": null,
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Toner cartridge",
+     "quantity": 11.0,
+     "unit_price": 109.67,
+     "amount": 1206.37
+    },
+    {
+     "description": "Courier delivery",
+     "quantity": 2.0,
+     "unit_price": 144.14,
+     "amount": 288.28
+    }
+   ],
+   "subtotal": 1494.65,
+   "tax": 0.0,
+   "total": 1494.65
+  }
+ },
+ {
+  "file": "inv_30_total_mismatch.pdf",
+  "kind": "total_mismatch",
+  "expected_issues": [
+   "TOTAL_MISMATCH"
+  ],
+  "expected_route": "review",
+  "truth": {
+   "vendor": "Cedar & Pine Printing",
+   "invoice_number": "C&P-2729",
+   "invoice_date": "2025-09-08",
+   "due_date": null,
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Desk lamp",
+     "quantity": 11.0,
+     "unit_price": 64.06,
+     "amount": 704.66
+    }
+   ],
+   "subtotal": 704.66,
+   "tax": 70.47,
+   "total": 815.13
+  }
+ },
+ {
+  "file": "inv_31_clean.txt",
+  "kind": "clean",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Harbor Freight Logistics",
+   "invoice_number": "HFL-8136",
+   "invoice_date": "2025-08-27",
+   "due_date": "2025-09-26",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Cloud backup plan",
+     "quantity": 12.0,
+     "unit_price": 95.83,
+     "amount": 1149.96
+    },
+    {
+     "description": "Monthly cleaning service",
+     "quantity": 11.0,
+     "unit_price": 51.53,
+     "amount": 566.83
+    }
+   ],
+   "subtotal": 1716.79,
+   "tax": 171.68,
+   "total": 1888.47
+  }
+ },
+ {
+  "file": "inv_32_clean.pdf",
+  "kind": "clean",
+  "expected_issues": [],
+  "expected_route": "approved",
+  "truth": {
+   "vendor": "Cedar & Pine Printing",
+   "invoice_number": "C&P-6325",
+   "invoice_date": "2025-09-11",
+   "due_date": "2025-10-11",
+   "currency": "USD",
+   "line_items": [
+    {
+     "description": "Business cards (500)",
+     "quantity": 8.0,
+     "unit_price": 46.92,
+     "amount": 375.36
+    },
+    {
+     "description": "Toner cartridge",
+     "quantity": 8.0,
+     "unit_price": 104.29,
+     "amount": 834.32
+    },
+    {
+     "description": "Courier delivery",
+     "quantity": 11.0,
+     "unit_price": 70.7,
+     "amount": 777.7
+    }
+   ],
+   "subtotal": 1987.38,
+   "tax": 0.0,
+   "total": 1987.38
+  }
+ }
+]

@@ -1,0 +1,19 @@
+From: Summit IT Services <billing@example.invalid>
+To: ap@sampleclient.invalid
+Subject: Invoice SIS-8433 from Summit IT Services
+
+Hello, please find our invoice below (SYNTHETIC).
+
+Invoice Number: SIS-8433
+Date: 22 Mar 2025
+Payment due: 21 Apr 2025
+Items:
+- Desk lamp (11 x 130.85) 1,439.35
+- Courier delivery (11 x 159.72) 1,756.92
+- Consulting hour (5 x 139.27) 696.35
+- Printer paper (case) (6 x 23.63) 141.78
+Subtotal 4,034.40
+Sales tax 403.44
+Amount due 4,442.84
+
+Thanks!

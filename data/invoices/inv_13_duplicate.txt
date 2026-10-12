@@ -1,0 +1,20 @@
+From: Greenleaf Catering <billing@example.invalid>
+To: ap@sampleclient.invalid
+Subject: Invoice GC-6820 from Greenleaf Catering
+
+Hello, please find our invoice below (SYNTHETIC).
+
+Invoice Number: GC-6820
+Date: 07/09/2025
+Payment due: 08/08/2025
+Items:
+- Laptop repair (11 x 44.11) 485.21
+- Network cable 10m (5 x 177.40) 887.00
+- Business cards (500) (4 x 156.50) 626.00
+- Toner cartridge (7 x 52.92) 370.44
+- Printer paper (case) (11 x 150.80) 1,658.80
+Subtotal 4,027.45
+Sales tax 201.37
+Amount due 4,228.82
+
+Thanks!

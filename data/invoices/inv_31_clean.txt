@@ -1,0 +1,17 @@
+From: Harbor Freight Logistics <billing@example.invalid>
+To: ap@sampleclient.invalid
+Subject: Invoice HFL-8136 from Harbor Freight Logistics
+
+Hello, please find our invoice below (SYNTHETIC).
+
+Invoice Number: HFL-8136
+Date: 27 Aug 2025
+Payment due: 26 Sep 2025
+Items:
+- Cloud backup plan (12 x 95.83) 1,149.96
+- Monthly cleaning service (11 x 51.53) 566.83
+Subtotal 1,716.79
+Sales tax 171.68
+Amount due 1,888.47
+
+Thanks!

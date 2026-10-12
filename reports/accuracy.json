@@ -1,0 +1,67 @@
+[
+ {
+  "mode": "rules",
+  "extractors_used": {
+   "rules": 32
+  },
+  "documents": 32,
+  "precision": {
+   "vendor": 1.0,
+   "invoice_number": 1.0,
+   "invoice_date": 1.0,
+   "due_date": 1.0,
+   "subtotal": 1.0,
+   "tax": 1.0,
+   "total": 1.0,
+   "line_items": 1.0
+  },
+  "recall": {
+   "vendor": 1.0,
+   "invoice_number": 0.7666666666666667,
+   "invoice_date": 0.9032258064516129,
+   "due_date": 1.0,
+   "subtotal": 1.0,
+   "tax": 1.0,
+   "total": 1.0,
+   "line_items": 1.0
+  },
+  "routing_accuracy": 0.78125,
+  "approved": 15,
+  "false_approvals": 0,
+  "injected_errors": 10,
+  "injected_errors_caught": 10
+ },
+ {
+  "mode": "llm",
+  "extractors_used": {
+   "llm": 28,
+   "rules": 4
+  },
+  "documents": 32,
+  "precision": {
+   "vendor": 1.0,
+   "invoice_number": 1.0,
+   "invoice_date": 1.0,
+   "due_date": 1.0,
+   "subtotal": 1.0,
+   "tax": 1.0,
+   "total": 1.0,
+   "line_items": 0.9894736842105263
+  },
+  "recall": {
+   "vendor": 1.0,
+   "invoice_number": 0.9666666666666667,
+   "invoice_date": 0.967741935483871,
+   "due_date": 1.0,
+   "subtotal": 1.0,
+   "tax": 1.0,
+   "total": 1.0,
+   "line_items": 0.9894736842105263
+  },
+  "routing_accuracy": 0.96875,
+  "approved": 21,
+  "false_approvals": 0,
+  "injected_errors": 10,
+  "injected_errors_caught": 10
+ }
+]

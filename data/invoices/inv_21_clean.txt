@@ -1,0 +1,17 @@
+From: Brightline Cleaning Co <billing@example.invalid>
+To: ap@sampleclient.invalid
+Subject: Invoice BCC-7790 from Brightline Cleaning Co
+
+Hello, please find our invoice below (SYNTHETIC).
+
+Invoice Number: BCC-7790
+Date: 22 Aug 2025
+Payment due: 21 Sep 2025
+Items:
+- Monthly cleaning service (1 x 47.09) 47.09
+- Printer paper (case) (8 x 111.58) 892.64
+Subtotal 939.73
+Sales tax 0.00
+Amount due 939.73
+
+Thanks!
