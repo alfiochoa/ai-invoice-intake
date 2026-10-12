@@ -1,0 +1,10 @@
+reportlab
+pypdf
+fastapi
+uvicorn
+streamlit
+pydantic>=2
+httpx
+openai
+python-multipart
+pytest
