@@ -18,26 +18,51 @@ class UnreadableDocument(Exception):
     pass
 
 
+def ocr_image(data: bytes) -> str:
+    """OCR backends tried in order: rapidocr (pip-only), pytesseract (needs the tesseract binary)."""
+    errs = []
+    try:
+        from rapidocr_onnxruntime import RapidOCR
+
+        res, _ = RapidOCR()(data)
+        # regroup detected boxes into visual rows so table cells stay on one line
+        boxes = sorted(((sum(pt[1] for pt in b) / 4, b[0][0], t) for b, t, _ in (res or [])))
+        rows: list[list] = []
+        for y, x, t in boxes:
+            if rows and abs(y - rows[-1][0][0]) < 12:
+                rows[-1].append((y, x, t))
+            else:
+                rows.append([(y, x, t)])
+        return "\n".join("  ".join(t for _, _, t in sorted(r, key=lambda c: c[1])) for r in rows)
+    except Exception as e:
+        errs.append(type(e).__name__)
+    try:
+        import pytesseract
+        from PIL import Image
+
+        return pytesseract.image_to_string(Image.open(io.BytesIO(data)))
+    except Exception as e:
+        errs.append(type(e).__name__)
+    raise UnreadableDocument(f"image OCR unavailable ({', '.join(errs)})")
+
+
 def read_text(name: str, data: bytes) -> str:
     ext = Path(name).suffix.lower()
     if ext == ".pdf":
         from pypdf import PdfReader
 
-        text = "\n".join(p.extract_text() or "" for p in PdfReader(io.BytesIO(data)).pages)
+        pages = PdfReader(io.BytesIO(data)).pages
+        text = "\n".join(p.extract_text() or "" for p in pages)
+        if len(text.strip()) < 20:  # scanned PDF: OCR the embedded page images
+            text = "\n".join(ocr_image(im.data) for p in pages for im in p.images)
     elif ext in {".txt", ".eml", ".md"}:
         text = data.decode("utf-8", errors="replace")
     elif ext in {".png", ".jpg", ".jpeg"}:
-        try:  # optional OCR; not a hard dependency
-            import pytesseract
-            from PIL import Image
-
-            text = pytesseract.image_to_string(Image.open(io.BytesIO(data)))
-        except Exception as e:
-            raise UnreadableDocument(f"image OCR unavailable ({type(e).__name__})")
+        text = ocr_image(data)
     else:
         raise UnreadableDocument(f"unsupported file type {ext!r}")
     if len(text.strip()) < 20:
-        raise UnreadableDocument("no extractable text (scanned PDF without OCR?)")
+        raise UnreadableDocument("no extractable text")
     return text
 
 
@@ -73,7 +98,7 @@ def extract_rules(text: str) -> Invoice:
     if not inv.vendor and lines:
         inv.vendor = lines[0]
     if m := re.search(
-        r"(?:invoice\s*(?:no\.?|number|#)|inv\s*#|inv\.?\s*no\.?)[ \t]*[:#]?[ \t]*([A-Z0-9][A-Z0-9\-/]{2,})", text, re.I
+        r"(?:invoice\s*(?:no\.?|number|#)|inv\s*#|inv\.?\s*no\.?)[ \t]*[:#]?[ \t]*([A-Z0-9][A-Z0-9\-/&]{2,})", text, re.I
     ):
         inv.invoice_number = m.group(1)
     for l in lines:
@@ -85,7 +110,7 @@ def extract_rules(text: str) -> Invoice:
             inv.subtotal = _last_money(l)
         elif re.match(r"(sales\s+tax|vat|gst|tax)\b", l, re.I):
             inv.tax = _last_money(l)
-        elif re.match(r"(grand\s+)?(total(\s+due)?|amount\s+due|balance\s+due)\b", l, re.I):
+        elif re.match(r"(grand\s+)?(total(\s*due)?|amount\s+due|balance\s+due)\b", l, re.I):
             inv.total = _last_money(l)
         elif m := re.match(rf"(.+?)\s{{2,}}(\d+(?:\.\d+)?)\s+\$?({MONEY})\s+\$?({MONEY})$", l):
             inv.line_items.append(LineItem(description=m[1], quantity=float(m[2]), unit_price=money(m[3]), amount=money(m[4])))

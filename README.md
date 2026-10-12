@@ -24,6 +24,14 @@ flowchart LR
 
 Validation checks: required fields (vendor, number, date, total), line items sum to subtotal, subtotal + tax = total, duplicate detection (same file hash, or same vendor + invoice number), vendor whitelist (`data/whitelist.txt`), due-date order, and a **grounding guard** (an extracted invoice number / total must literally appear in the source text, which catches LLM hallucinations). The LLM is optional: any API error, timeout or schema-invalid output silently falls back to the rule extractor.
 
+## Review UI (real screenshot, headless Chromium via Playwright)
+
+![Streamlit review queue](docs/review_ui.png)
+
+## OCR for images / scanned PDFs
+
+Images and image-only PDFs are OCR'd with [RapidOCR](https://github.com/RapidAI/RapidOCR) (pip-only; \`pip install -r requirements-ocr.txt\`), falling back to \`pytesseract\` if the tesseract binary exists (it was not installable in the dev environment, so it is untested). OCR boxes are regrouped into rows so table lines survive. Tested with \`python -m invoice_intake.scans\` on 6 synthetic scan-like inputs (3 PNG, 3 image-only PDF, slight rotation + blur): **total extracted correctly 6/6, invoice number 5/6**. The one miss was an OCR misread (\`NOS-2604\` read as \`N0S-2604\`) that still passed validation and was **auto-approved**, so OCR output should be spot-checked; the grounding guard cannot catch errors the OCR itself introduces. Tiny sample, clean fonts: not representative of real scans.
+
 ## Run it
 
 ```bash
@@ -43,26 +51,26 @@ pytest
 | Field | rules P / R | llm P / R |
 |---|---|---|
 | vendor | 100% / 100% | 100% / 100% |
-| invoice_number | 100% / 77% | 100% / 97% |
+| invoice_number | 100% / 90% | 100% / 100% |
 | invoice_date | 100% / 90% | 100% / 97% |
 | due_date | 100% / 100% | 100% / 100% |
 | subtotal | 100% / 100% | 100% / 100% |
 | tax | 100% / 100% | 100% / 100% |
 | total | 100% / 100% | 100% / 100% |
 | line_items | 100% / 100% | 99% / 99% |
-| extractor used | rules: 32 | llm: 28, rules: 4 |
-| **routing accuracy** | 78% | 97% |
-| **false approvals** | 0 of 15 approved | 0 of 21 approved |
+| extractor used | rules: 32 | llm: 27, rules: 5 |
+| **routing accuracy** | 88% | 97% |
+| **false approvals** | 0 of 18 approved | 0 of 21 approved |
 | **injected errors caught** | 10 / 10 | 10 / 10 |
 
-Model: `openai/gpt-oss-20b` via Groq (4 of 32 requests fell back to rules, which is the designed behaviour). Re-run to reproduce; LLM numbers vary slightly between runs. Full output: `reports/accuracy.json`.
+Model: `openai/gpt-oss-20b` via Groq (5 of 32 requests fell back to rules, which is the designed behaviour). Re-run to reproduce; LLM numbers vary slightly between runs. Full output: `reports/accuracy.json`.
 
-Take-aways: the rules never emit a wrong value on this data (they return nothing instead, so the document is routed to review); the LLM recovers noisy documents, lifting routing accuracy from 78% to 97%. No invalid invoice was auto-approved in either mode, and every injected error was flagged.
+Take-aways: the rules never emit a wrong value on this data (they return nothing instead, so the document is routed to review); the LLM recovers noisy documents, lifting routing accuracy from 88% to 97%. No invalid invoice was auto-approved in either mode, and every injected error was flagged.
 
 ## Limitations
 
 - **Synthetic, template-based data**: three layouts in a single currency (USD). Real invoices are far messier; the 100% precision numbers will not transfer. The rule extractor is tuned to these layouts.
-- Image/scanned-PDF input needs OCR (`pytesseract` + Tesseract) which is optional and not covered by tests/benchmark; without it such files go to review as `UNREADABLE`.
+- OCR is optional (see above) and only lightly tested on synthetic scans; without an OCR backend such files go to review as `UNREADABLE`.
 - Floats are used for money with a 0.02 tolerance (use `Decimal` for production).
 - One-page assumptions, no multi-currency/tax-ID handling, no auth on the API/UI, SQLite only.
 - Sending real invoices to a hosted LLM has privacy implications; use a local model for sensitive data.

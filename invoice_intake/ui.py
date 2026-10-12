@@ -1,5 +1,9 @@
 """Streamlit review UI.  `streamlit run invoice_intake/ui.py`  (talks to the SQLite DB directly)"""
 import json
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # `streamlit run` doesn't add repo root
 
 import streamlit as st
 

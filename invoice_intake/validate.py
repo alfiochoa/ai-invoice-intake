@@ -18,7 +18,7 @@ def load_whitelist(path: Path | None = None) -> set[str]:
 
 
 def norm(s: str) -> str:
-    return " ".join((s or "").lower().replace(",", " ").replace(".", " ").split())
+    return "".join(ch for ch in (s or "").lower() if ch.isalnum())  # OCR drops spaces/punctuation
 
 
 def validate(inv: Invoice, text: str, whitelist: set[str], duplicate_of: int | None = None) -> list[Issue]:

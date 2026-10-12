@@ -82,3 +82,11 @@ def test_api_flow_and_csv_only_contains_approved(data, monkeypatch, tmp_path):
     rows = list(csv.DictReader(io.StringIO(c.get("/export.csv").text)))
     approved = {x["invoice_number"] for x in c.get("/invoices?status=approved").json()}
     assert approved and {r["InvoiceNumber"] for r in rows} == approved
+
+
+def test_ocr_scanned_inputs():
+    pytest.importorskip("rapidocr_onnxruntime")
+    from invoice_intake import scans
+
+    r = scans.run(4, tmp := __import__("pathlib").Path(__import__("tempfile").mkdtemp()))
+    assert r["total"] >= 3
